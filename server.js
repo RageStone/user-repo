@@ -10,7 +10,7 @@ const ydtl =require("ytdl-core");
 const Discord = require('discord.js')
 const Enmap = require("enmap");
 const fs = require("fs");
-
+const db = require('quick.db');
 // our default array of dreams
 
 // make all the files in 'public' available
