@@ -1,6 +1,7 @@
+const Discord = require("discord.js")
 module.exports.run = async(client, message, args, RichEmbed) => {
 //help command
-  const Embed = new RichEmbed()
+  const Embed = new Discord.RichEmbed()
   .setTitle("Help commands!")
   .setColor(0xFF0000)
   .setDescription("**here is my command list:**")
@@ -16,7 +17,7 @@ module.exports.run = async(client, message, args, RichEmbed) => {
   .addField("**-skin {user}**", "``see the skin of a mc user``")
   .addField("**-head {user}**", "``see the head of a mc user``")
   .setTimestamp()
-  .setFooter("MADE BY LARS#9237\n Requested By " + message.author.tag, message.author.avatarURL);
+  .setFooter("MADE BY LARS#9237\nRequested By " + message.author.tag, message.author.avatarURL);
   message.reply(" look at your dm`s for my command list!")
   message.author.send(Embed);       
     }
