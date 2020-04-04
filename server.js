@@ -10,7 +10,7 @@ const ydtl =require("ytdl-core");
 const Discord = require('discord.js')
 const Enmap = require("enmap");
 const fs = require("fs");
-const db = require('quick.db');
+
 // our default array of dreams
 
 // make all the files in 'public' available
@@ -63,19 +63,17 @@ client.on('ready', () => {
   
 });
 
-
-
+module.exports.run = async(client, message, args, RichEmbed) => {
 //leave event1
-
-client.on('guildMemberRemove', member => {
+('guildMemberRemove', member => {
   member.guild.channels.get('693927138272739358').send(':tired_face: ' + member + " left " + member.guild.name)
-})
+})}
 
 
-
-client.on('guildMemberAdd', member => {
+module.exports = async(client, message, member, guild) => {
+('guildMemberAdd', member => {
     member.guild.channels.get('693927138272739358').send('Hi ' +  member + " Welcome To " + member.guild.name +' please read the rules, and Enjoy! :yum: ' )
-})
+})}
 
 
 client.login(process.env.TOKEN)
