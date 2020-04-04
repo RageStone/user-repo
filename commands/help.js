@@ -30,7 +30,6 @@ module.exports.run = async(client, message, args, RichEmbed) => {
   message.delete()
 }, 2000);
      })
-  message.reply(" look at your dms for my command list!")
   message.author.send(Embed);
 }
 
