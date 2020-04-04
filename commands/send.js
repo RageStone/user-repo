@@ -1,19 +1,24 @@
-module.exports.run = async(client, message, args, RichEmbed) => {  
+module.exports.run = async(client, message, args, RichEmbed) => {
 //send command
-let channel = message.guild.channels.find(channel => channel.toString() == args[0])
-if(channel) channel.send(args.slice(1).join(" "))
-message.delete();
-channel
-if(!channel) message.channel.send(args.join(" "))
+  let msg = await(message.channel.send)
+  var guilds = "";
+  message.delete()
+client.channels.forEach(channel => {
+  if(channel.name === args[0]) return channel.send(message.content.replace("-send ", "")), guilds += channel.guild.name + "\n";
+  if(!channel.name === args[0]) return;
+})
   const Embed = new RichEmbed()
   .setTitle('Done! ')
-  .setDescription('Ive sent ' + ' ' + args[2] + ' ' + args[3] + ' ' + args[4] + ' ' + args[4] + ' ' + args[4] + ' ' + ' in ' + args[0])
+  .setDescription('Ive sent ' + "" + message.content.replace("-send ", "", args[0], "") + "" + ' in ' + "" + guilds + "")
+  
   .setFooter("MADE BY LARS#9237\n Requested By " + message.author.tag, message.author.avatarURL)
   message.channel.send(Embed)
   .then(Embed => {
   setTimeout(() => {
   Embed.delete()
-}, 8000);
+}, 10000)});
+
  
-  })  
-}    
+  }
+
+
