@@ -72,7 +72,7 @@ module.exports.run = async(client, message, args, RichEmbed) => {
 
 module.exports = async(client, message, member, guild) => {
 ('guildMemberAdd', member => {
-    member.guild.channels.get('693927138272739358').send('Hi ' +  member + " Welcome To " + member.guild.name +' please read the rules, and Enjoy! :yum: ' )
+    member.guild.channels.get('693927138272739358').send('**שלום** ' +  member + " **ברוך הבא ל** " + member.guild.name +' בבקשה תקראה  :yum: ' )
 })}
 
 
