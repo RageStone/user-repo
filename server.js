@@ -67,8 +67,8 @@ client.on('ready', () => {
 //leave event1
 client.on('guildMemberRemove', member => {
   const Embed = new RichEmbed()
-  .setAuthor(`${member}`)
-  .setTitle(':tired_face: **להתראות** ' + '&' +member + " מקווים שנהנת ב " + member.guild.name)
+  .setAuthor(member.icon)
+  .setTitle(':tired_face: **להתראות** ' + member.name + " מקווים שנהנת ב " + member.guild.name)
   .setThumbnail('https://cdn.glitch.com/f8890cc6-d94f-4973-b8ae-92ea9a863631%2F1.png?v=1586080284560')
   member.guild.channels.get('693927138272739358').send(Embed)
 })
@@ -77,8 +77,8 @@ client.on('guildMemberRemove', member => {
 
 client.on('guildMemberAdd', member => {
     const Embed = new RichEmbed()
-  .setAuthor(member)
-  .setTitle('**שלום** ' +  member + " **ברוך הבא ל** " + member.guild.name +' **בבקשה תקרא את החוקים, ותהנה!** :yum: ')
+  .setAuthor(member.icon)
+  .setTitle('**שלום** '  + member.name  + " **ברוך הבא ל** " + member.guild.name +' **בבקשה תקרא את החוקים, ותהנה!** :yum: ')
   .setThumbnail('https://cdn.glitch.com/f8890cc6-d94f-4973-b8ae-92ea9a863631%2F1.png?v=1586080284560')
   member.guild.channels.get('693927138272739358').send(Embed)
     member.guild.channels.get('693927138272739358').send(Embed)
